@@ -1,0 +1,236 @@
+/* Global Reset & Base */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    background-color: #e4eaf0;
+  }
+  
+  /* Page Wrapper */
+  .pageWrapper {
+    min-height: 100vh;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cce4f9;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .navbarLogo {
+    height: 50px;
+  }
+  
+  .navLinks a {
+    margin-left: 17px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .navLinks{
+    margin-right: 50px;
+  }
+
+  .logoutButton {
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .mainContainer{
+    background-color: #e4eaf0;
+  }
+  
+  /* Quick Actions Section */
+  .quickActions {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .actionContainer {
+    flex: 1 1 200px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #e7f0f8;
+    transition: transform 0.2s;
+  }
+  
+  .actionContainer:hover {
+    transform: scale(1.05);
+  }
+  
+  .actionContainer img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  
+  .actionContainer p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Upload Document Container */
+  .uploadContainer {
+    display: flex;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    min-height: 200px;
+  }
+  
+  .uploadImage {
+    width: 40%;
+    background-image: url('https://ik.imagekit.io/ve7kfpijr/digital_signature_img.jpg?updatedAt=1739940026711');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+  }
+  
+  .uploadContent {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .uploadText {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .selectButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Document List Items */
+  .document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f0f8;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .documentName {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .deleteButton {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Modal Styles */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .modalContent select,
+  .modalContent input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .modalButtons button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .headDoc{
+    margin-left:30px;
+  }
+
+  /* Footer */
+  .footer {
+    background-color: rgb(163, 216, 237);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .quickActions {
+      flex-direction: column;
+      align-items: center;
+    }
+    .uploadContainer {
+      flex-direction: column;
+      width: 95%;
+    }
+    .uploadImage {
+      width: 100%;
+      height: 150px;
+    }
+  }
+  
