@@ -9,7 +9,7 @@ function ShareDocument({ documentId, onShareSuccess }) {
   const handleShare = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://digital-signature-app-backend-1.onrender.com/api/documents/share', {
+      const response = await fetch('https://digital-signature-app-backend.onrender.com/api/documents/share', {
         method: 'POST',
         credentials: 'include',
         headers: { 

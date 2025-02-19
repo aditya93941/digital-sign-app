@@ -9,7 +9,7 @@ function TextSign({ documentId, onSignSuccess }) {
 
   const handleSign = async () => {
     try {
-      const response = await fetch('https://digital-signature-app-backend-1.onrender.com/api/documents/sign-text', {
+      const response = await fetch('https://digital-signature-app-backend.onrender.com/api/documents/sign-text', {
         method: 'POST',
         credentials: 'include',
         headers: {

@@ -16,7 +16,7 @@ function UploadDocument({ onUploadSuccess }) {
     const formData = new FormData();
     formData.append('document', file);
     try {
-      const response = await fetch('https://digital-signature-app-backend-1.onrender.com/api/documents/upload', {
+      const response = await fetch('https://digital-signature-app-backend.onrender.com/api/documents/upload', {
         method: 'POST',
         credentials: 'include',
         headers: { 'Authorization': `Bearer ${token}` },

@@ -11,7 +11,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://digital-signature-app-backend-1.onrender.com/api/auth/register', {
+      const response = await fetch('https://digital-signature-app-backend.onrender.com/api/auth/register', {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

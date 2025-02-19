@@ -39,7 +39,7 @@ function SignDocument({ documentId, onSignSuccess }) {
     const canvas = canvasRef.current;
     const signatureData = canvas.toDataURL('image/png');
     try {
-      const response = await fetch('https://digital-signature-app-backend-1.onrender.com/api/documents/sign', {
+      const response = await fetch('https://digital-signature-app-backend.onrender.com/api/documents/sign', {
         method: 'POST',
         credentials: 'include',
         headers: {

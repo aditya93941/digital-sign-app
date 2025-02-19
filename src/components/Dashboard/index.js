@@ -20,7 +20,7 @@ function Dashboard() {
 
   const fetchDocuments = async () => {
     try {
-      const response = await fetch('https://digital-signature-app-backend-1.onrender.com/api/documents', {
+      const response = await fetch('https://digital-signature-app-backend.onrender.com/api/documents', {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
@@ -44,7 +44,7 @@ function Dashboard() {
 
   const handleDelete = async (documentId) => {
     try {
-      const response = await fetch(`https://digital-signature-app-backend-1.onrender.com/api/documents/${documentId}`, {
+      const response = await fetch(`https://digital-signature-app-backend.onrender.com/api/documents/${documentId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` },
       });
@@ -101,7 +101,7 @@ function Dashboard() {
       return;
     }
     try {
-      const response = await fetch(`https://digital-signature-app-backend-1.onrender.com/api/documents/download/${modalData.selectedDocId}`, {
+      const response = await fetch(`https://digital-signature-app-backend.onrender.com/api/documents/download/${modalData.selectedDocId}`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       if (!response.ok) {
@@ -136,7 +136,7 @@ function Dashboard() {
     }
     const fileName = doc.signedPath ? doc.signedPath : doc.storagePath;
     // Construct public URL for the document (adjust host as needed)
-    const documentUrl = `https://digital-signature-app-backend-1.onrender.com/uploads/${fileName}`;
+    const documentUrl = `https://digital-signature-app-backend.onrender.com/uploads/${fileName}`;
     const message = encodeURIComponent(`Check out this document: ${documentUrl}`);
     const whatsappUrl = `https://api.whatsapp.com/send?text=${message}`;
     window.open(whatsappUrl, '_blank');
