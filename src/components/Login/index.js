@@ -21,7 +21,6 @@ function Login({ onLogin }) {
       if (!response.ok) {
         setError(data.message || 'Login failed');
       } else {
-        // Store the token in a cookie (expires in 1 day)
         Cookies.set('token', data.token, { expires: 1 });
         onLogin && onLogin(data.token);
         navigate('/dashboard');
@@ -33,7 +32,6 @@ function Login({ onLogin }) {
 
   return (
     <div className="pageWrapper">
-      {/* Navbar */}
       <nav className="navbarLogin">
         <img
           src="https://ik.imagekit.io/ve7kfpijr/rpost_logo-removebg-preview.png?updatedAt=1739940047133"
@@ -42,9 +40,7 @@ function Login({ onLogin }) {
         />
       </nav>
 
-      {/* Main content */}
       <main className="loginContent">
-        {/* Left side: Image */}
         <div className="loginImageContainer">
           <img
             src="https://ik.imagekit.io/ve7kfpijr/digital_signature_img.jpg?updatedAt=1739940026711"
@@ -52,7 +48,6 @@ function Login({ onLogin }) {
             className="loginImage"
           />
         </div>
-        {/* Right side: Login form */}
         <div className="formWrapper">
           <form onSubmit={handleSubmit} className="formContainer">
             <h1 className="loginHead">Login</h1>
@@ -83,7 +78,6 @@ function Login({ onLogin }) {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="footerLogin">
         <p>CopyRights@RPost-2025</p>
       </footer>

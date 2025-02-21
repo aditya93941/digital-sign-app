@@ -28,7 +28,6 @@ function UploadDocument({ onUploadSuccess }) {
       } else {
         setMessage('Upload successful');
         onUploadSuccess();
-        // Clear the message after 3 seconds
         setTimeout(() => {
           setMessage('');
         }, 3000);
@@ -42,7 +41,6 @@ function UploadDocument({ onUploadSuccess }) {
     fileInputRef.current.click();
   };
 
-  // Enable drag and drop functionality
   const handleDragOver = (e) => {
     e.preventDefault();
   };

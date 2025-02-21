@@ -10,7 +10,6 @@ function SignDocument({ documentId, onSignSuccess }) {
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
-    // Fill canvas with white background
     context.fillStyle = "#fff";
     context.fillRect(0, 0, canvas.width, canvas.height);
   }, []);

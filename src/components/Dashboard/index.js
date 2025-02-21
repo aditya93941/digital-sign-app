@@ -8,14 +8,11 @@ import './index.css';
 function Dashboard() {
   const [documents, setDocuments] = useState([]);
   const [error, setError] = useState('');
-  // modalData is used for Download, Share, and initial signature selection
   const [modalData, setModalData] = useState(null);
-  // signMode will be either 'freehand' or 'text' to show the signing pop-up modal
   const [signMode, setSignMode] = useState(null);
-  // Store the selected document id for signing
   const [selectedSignDocId, setSelectedSignDocId] = useState(null);
 
-  const token = Cookies.get('token'); // Retrieve token from cookie
+  const token = Cookies.get('token');
   const isMobile = window.innerWidth <= 480;
 
   const fetchDocuments = async () => {
@@ -66,14 +63,11 @@ function Dashboard() {
       uploadSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  // Logout function: Remove token and redirect
   const handleLogout = () => {
     Cookies.remove('token');
     window.location.href = '/login';
   };
 
-  // Modal handlers for Digital Signature selection
   const handleFreehandSignature = () => {
     if (!modalData.selectedDocId) {
       alert("Please select a document.");
@@ -94,7 +88,6 @@ function Dashboard() {
     setSignMode('text');
   };
 
-  // Modal handler for Download action
   const handleDownloadFromModal = async () => {
     if (!modalData.selectedDocId) {
       alert("Please select a document.");
@@ -122,20 +115,17 @@ function Dashboard() {
     }
   };
 
-  // Modal handler for WhatsApp Share action
   const handleShareFromModal = () => {
     if (!modalData.selectedDocId) {
       alert("Please select a document.");
       return;
     }
-    // Find the document by its id
     const doc = documents.find(d => d.id === parseInt(modalData.selectedDocId));
     if (!doc) {
       alert("Document not found");
       return;
     }
     const fileName = doc.signedPath ? doc.signedPath : doc.storagePath;
-    // Construct public URL for the document (adjust host as needed)
     const documentUrl = `https://digital-signature-app-backend.onrender.com/uploads/${fileName}`;
     const message = encodeURIComponent(`Check out this document: ${documentUrl}`);
     const whatsappUrl = `https://api.whatsapp.com/send?text=${message}`;
@@ -145,7 +135,6 @@ function Dashboard() {
 
   return (
     <div className="pageWrapper">
-      {/* Navbar */}
       <nav className="navbar">
         <img
           src="https://ik.imagekit.io/ve7kfpijr/rpost_logo-removebg-preview.png?updatedAt=1739940047133"
@@ -159,7 +148,6 @@ function Dashboard() {
       </nav>
 
       <div className="mainContainer">
-        {/* Quick Actions Section */}
         <div className="quickActions">
           <div className="actionContainer" onClick={scrollToUpload}>
             <img src="https://ik.imagekit.io/ve7kfpijr/upload-removebg-preview.png" alt="Upload Document" />
@@ -199,7 +187,6 @@ function Dashboard() {
 
         {error && <p className="errMsg">{error}</p>}
 
-        {/* Modal for Download/Share/Signature Selection */}
         {modalData && (
           <div className="modalOverlay">
             <div className="modalContent">
@@ -238,7 +225,6 @@ function Dashboard() {
           </div>
         )}
 
-        {/* Modal for Sign Components (Freehand or Text) */}
         {signMode && (
           <div className="modalOverlay">
             <div className="modalContent">
@@ -270,7 +256,6 @@ function Dashboard() {
           </div>
         )}
 
-        {/* Upload Document Area */}
         <div id="uploadSection">
           <UploadDocument onUploadSuccess={handleUploadSuccess} />
         </div>
@@ -284,7 +269,6 @@ function Dashboard() {
         ))}
       </div>
 
-      {/* Footer */}
       <footer className="footerLogin">
         <p>CopyRights@RPost-2025</p>
       </footer>
